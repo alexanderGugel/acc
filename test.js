@@ -16,6 +16,24 @@ test('basic', function (t) {
   fn(2, 3, 4)
 })
 
+test('inconsistent arguments', function (t) {
+  t.plan(5)
+
+  var fn = acc(2, function () {
+    var args = Array.prototype.slice.call(arguments)
+    t.deepEqual(args[0], [1, 2])
+
+    // tape's deep-equal dependency doesn't handle sparse arrays correctly.
+    // See https://github.com/substack/node-deep-equal/issues/2
+    t.deepEqual(args[1][0], undefined)
+    t.deepEqual(args[1][1], 3)
+    t.deepEqual(args[2][0], undefined)
+    t.deepEqual(args[2][1], 4)
+  })
+  fn(1)
+  fn(2, 3, 4)
+})
+
 test('called to ofen', function (t) {
   t.plan(2)
 

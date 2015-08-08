@@ -10,15 +10,17 @@ function acc (count, callback) {
 
   var results = []
 
+  var invoked = 0
+
   return function () {
-    if (count === 0) {
+    if (invoked === count) {
       throw new Error('acc called too many times')
     }
     for (var i = 0; i < arguments.length; i++) {
       results[i] = results[i] || []
-      results[i].push(arguments[i])
+      results[i][invoked] = arguments[i]
     }
-    if (--count === 0) callback.apply(null, results)
+    if (++invoked === count) callback.apply(null, results)
   }
 }
 
