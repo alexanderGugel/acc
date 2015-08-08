@@ -1,0 +1,24 @@
+{
+  "name": "acc",
+  "version": "0.0.0",
+  "description": "A more generic version of `after` that accumulates arguments (including errors) from previous invocations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderGugel/acc.git"
+  },
+  "author": "Alexander Gugel <alexander.gugel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexanderGugel/acc/issues"
+  },
+  "homepage": "https://github.com/alexanderGugel/acc#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.0.3",
+    "standard": "^5.0.2"
+  }
+}
