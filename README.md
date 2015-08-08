@@ -4,7 +4,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-A more generic version of [`after`](https://github.com/Raynos/after) that accumulates arguments (including errors) from previous invocations.
+A more generic version of [`after`](https://github.com/Raynos/after) function that accumulates arguments (including errors) from previous invocations.
 
 ## Usage
 
