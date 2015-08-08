@@ -1,6 +1,6 @@
 {
   "name": "acc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A more generic version of `after` function that accumulates arguments (including errors) from previous invocations.",
   "main": "index.js",
   "scripts": {
