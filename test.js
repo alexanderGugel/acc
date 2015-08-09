@@ -34,7 +34,17 @@ test('inconsistent arguments', function (t) {
   fn(2, 3, 4)
 })
 
-test('called to ofen', function (t) {
+test('chainable', function (t) {
+  t.plan(3)
+
+  var fn = acc(2, function () {
+    t.pass('should invoke callback after 2 calls')
+  })
+  t.equal(fn(), fn, 'should be chainable')
+  t.equal(fn(), fn, 'should be chainable')
+})
+
+test('called too ofen', function (t) {
   t.plan(2)
 
   var fn = acc(2, function () {

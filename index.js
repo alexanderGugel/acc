@@ -19,6 +19,8 @@ function acc (count, callback) {
       results[i][fn.invoked] = arguments[i]
     }
     if (++fn.invoked === fn.count) callback.apply(null, results)
+
+    return fn
   }
 
   fn.invoked = 0
