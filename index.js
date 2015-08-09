@@ -1,7 +1,7 @@
 'use strict'
 
 function acc (count, callback) {
-  if (typeof count !== 'number' || (count | 0) !== count || count <= 0) {
+  if (typeof count !== 'number' || (count | 0) !== count || count < 0) {
     throw new Error('count needs to be > 0')
   }
   if (typeof callback !== 'function') {

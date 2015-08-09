@@ -52,7 +52,6 @@ test('invalid args', function (t) {
     [null, null],
     [null, function () {}],
     [1.5, function () {}],
-    [0, function () {}],
     [-1, function () {}],
     [-1.5, function () {}],
     [3, '']
