@@ -74,3 +74,24 @@ test('invalid args', function (t) {
 
   t.end()
 })
+
+test('progress', function (t) {
+  var args = []
+  var fn = acc(2, function () {
+    args.push(['cb', arguments])
+  }, function () {
+    args.push(['progress', arguments])
+  })
+
+  fn(1, 2)
+  fn(1.5, 2.5)
+
+  // deepEqual hack, again
+  t.equal(JSON.stringify(args), JSON.stringify([
+    [ 'progress', { 0: 1, 1: 2, 2: [ 1, 2 ] } ],
+    [ 'progress', { 0: 2, 1: 2, 2: [ 1.5, 2.5 ] } ],
+    [ 'cb', { 0: [ 1, 1.5 ], 1: [ 2, 2.5 ] } ]
+  ]))
+
+  t.end()
+})
